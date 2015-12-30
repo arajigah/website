@@ -12,3 +12,5 @@ public class HomeController {
 		return "/home.html";
 	}
 }
+
+//Remove or rename

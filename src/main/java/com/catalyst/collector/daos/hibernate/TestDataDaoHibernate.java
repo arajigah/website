@@ -32,3 +32,4 @@ public class TestDataDaoHibernate implements TestDataDao {
 	}
 
 }
+//Don't build on this, start a new class and DELETE this file!
