@@ -1,10 +1,10 @@
-package com.catalyst.collector.services.impl;
+package com.catalyst.zooKeepr.daos.hibernate;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class TestDataServiceImplTest {
+public class TestDataDaoHibernateTest {
 
 	@Test
 	public void test() {

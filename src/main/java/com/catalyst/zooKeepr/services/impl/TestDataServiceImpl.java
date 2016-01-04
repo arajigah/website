@@ -1,4 +1,4 @@
-package com.catalyst.collector.services.impl;
+package com.catalyst.zooKeepr.services.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,9 +6,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.catalyst.collector.daos.TestDataDao;
-import com.catalyst.collector.entities.TestData;
-import com.catalyst.collector.services.TestDataService;
+import com.catalyst.zooKeepr.daos.TestDataDao;
+import com.catalyst.zooKeepr.entities.TestData;
+import com.catalyst.zooKeepr.services.TestDataService;
 
 @Service
 public class TestDataServiceImpl implements TestDataService {

@@ -1,4 +1,4 @@
-package com.catalyst.collector.entities;
+package com.catalyst.zooKeepr.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

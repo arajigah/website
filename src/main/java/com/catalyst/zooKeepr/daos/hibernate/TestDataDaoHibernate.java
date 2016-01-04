@@ -1,4 +1,4 @@
-package com.catalyst.collector.daos.hibernate;
+package com.catalyst.zooKeepr.daos.hibernate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,8 +9,8 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
-import com.catalyst.collector.daos.TestDataDao;
-import com.catalyst.collector.entities.TestData;
+import com.catalyst.zooKeepr.daos.TestDataDao;
+import com.catalyst.zooKeepr.entities.TestData;
 
 @Repository
 @Transactional
