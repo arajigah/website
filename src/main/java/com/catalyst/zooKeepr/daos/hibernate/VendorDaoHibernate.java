@@ -8,12 +8,12 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
-import com.catalyst.zooKeepr.daos.FoodCategoryDao;
-import com.catalyst.zooKeepr.entities.FoodCategory;
+import com.catalyst.zooKeepr.daos.VendorDao;
+import com.catalyst.zooKeepr.entities.Vendor;
 
 @Repository
 @Transactional
-public class FoodCategoryDaoHibernate implements FoodCategoryDao {
+public class VendorDaoHibernate implements VendorDao {
 	
 	@PersistenceContext
 	private EntityManager em;
@@ -23,13 +23,13 @@ public class FoodCategoryDaoHibernate implements FoodCategoryDao {
 	}
 
 	@Override
-	public List<FoodCategory> getAllFoodCategories() {
-		return em.createQuery("SELECT c FROM FoodCategory c", FoodCategory.class).getResultList();
+	public List<Vendor> getVendor() {
+		return em.createQuery("SELECT v FROM Vendor v", Vendor.class).getResultList();
 	}
 
 	@Override
-	public void add(FoodCategory foodCategory) {
-		em.persist(foodCategory);
+	public void add(Vendor vendor) {
+		em.persist(vendor);
 	}
 
 }

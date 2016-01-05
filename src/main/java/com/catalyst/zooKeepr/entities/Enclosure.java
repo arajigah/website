@@ -1,9 +1,14 @@
 package com.catalyst.zooKeepr.entities;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Enclosure {
@@ -11,10 +16,22 @@ public class Enclosure {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
+	@NotNull
 	private String name;
+	
+	@OneToOne(cascade = CascadeType.MERGE)
+	@JoinColumn(name = "animal_id")
 	private Animal animal;
+	
+	@NotNull
 	private int numOfAnimals;
+	
+	@NotNull
 	private int feedTime;
+	
+	@ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+	@JoinColumn(name = "enclosureCondition_id")
 	private EnclosureCondition condition;
 	
 	public int getId() {

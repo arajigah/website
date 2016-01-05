@@ -7,26 +7,29 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
 @Entity
-public class EnclosureCondition {
+public class Vendor {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	@NotNull
-	private String condition;
-	
+	private String name;
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getCondition() {
-		return condition;
+
+	public String getName() {
+		return name;
 	}
-	public void setCondition(String condition) {
-		this.condition = condition;
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }

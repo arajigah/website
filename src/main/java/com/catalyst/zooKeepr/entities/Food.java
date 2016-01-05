@@ -1,9 +1,14 @@
 package com.catalyst.zooKeepr.entities;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Food {
@@ -11,8 +16,16 @@ public class Food {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
+	@NotNull
 	private String name;
-	private String vendor;
+	
+	@OneToOne(cascade = CascadeType.MERGE)
+	@JoinColumn(name = "vendor_id")
+	private Vendor vendor;
+	
+	@ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+	@JoinColumn(name = "foodCategory_id")
 	private FoodCategory category;
 	
 	public int getId() {
@@ -27,10 +40,10 @@ public class Food {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getVendor() {
+	public Vendor getVendor() {
 		return vendor;
 	}
-	public void setVendor(String vendor) {
+	public void setVendor(Vendor vendor) {
 		this.vendor = vendor;
 	}
 	public FoodCategory getCategory() {
