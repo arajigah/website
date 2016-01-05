@@ -33,19 +33,24 @@ public class EnclosureServiceImplTest {
 	@Test
 	public void testAddEnclosureValid() {
 		Enclosure e = new Enclosure();
-		e.setName("name");
+		e.setName("enclosure");
 		target.addEnclosure(e);
 		verify(mockEnclosureDao, times(1)).add(e);
 	}
 	
 	@Test
-	public void testGetEnclosures(){
+	public void testGetEnclosures() {
 		int expected = 1;
 		List<Enclosure> actualEnclosureList = new ArrayList<Enclosure>();
 		Enclosure e = new Enclosure();
 		actualEnclosureList.add(e);
 		when(mockEnclosureDao.getEnclosure()).thenReturn(actualEnclosureList);
 		assertEquals(expected, target.getEnclosure().size());
+	}
+	
+	@Test
+	public void testUpdateEnclosure() {
+		
 	}
 
 }

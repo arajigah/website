@@ -25,4 +25,9 @@ public class EnclosureConditionServiceImpl implements EnclosureConditionService 
 		enclosureConditionDao.add(enclosureCondition);
 	}
 
+	public void setEnclosureConditionDao(EnclosureConditionDao mockEnclosureConditionDao) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
