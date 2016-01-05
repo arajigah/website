@@ -30,4 +30,9 @@ public class FoodServiceImpl implements FoodService {
 		foodDao.update(food);
 	}
 
+	public void setFoodDao(FoodDao foodDao) {
+		this.foodDao = foodDao;
+		
+	}
+
 }
