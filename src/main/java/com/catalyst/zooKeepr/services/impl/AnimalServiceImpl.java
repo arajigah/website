@@ -30,4 +30,8 @@ public class AnimalServiceImpl implements AnimalService {
 		animalDao.update(animal);
 	}
 
+	public void setAnimalDao(AnimalDao animalDao) {
+		this.animalDao = animalDao;
+	}
+
 }

@@ -25,4 +25,8 @@ public class FoodCategoryServiceImpl implements FoodCategoryService {
 		foodCategoryDao.add(foodCategory);
 	}
 
+	public void setFoodCategoryDao(FoodCategoryDao foodCategoryDao) {
+		this.foodCategoryDao = foodCategoryDao;
+	}
+
 }

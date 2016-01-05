@@ -25,4 +25,8 @@ public class VendorServiceImpl implements VendorService {
 		vendorDao.add(vendor);
 	}
 
+	public void setVendorDao(VendorDao vendorDao) {
+		this.vendorDao = vendorDao;
+	}
+
 }
