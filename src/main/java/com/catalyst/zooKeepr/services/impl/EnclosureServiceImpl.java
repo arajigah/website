@@ -35,4 +35,10 @@ public class EnclosureServiceImpl implements EnclosureService {
 		enclosureDao.delete(enclosure);
 	}
 
+	public void setEnclosureDao(EnclosureDao enclosureDao) {
+		this.enclosureDao = enclosureDao;
+	}
+
+	
+
 }
