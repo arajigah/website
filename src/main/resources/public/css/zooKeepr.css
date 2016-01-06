@@ -1,5 +1,5 @@
 html{
-    background: url('../img/elephant_desert.jpg') no-repeat center center;
+    background: url('../img/african_lion.jpg') no-repeat center center;
     min-height: 100%;
     background-size: cover;
 }
@@ -74,10 +74,10 @@ html{
         -webkit-transition:padding .3s;
         -moz-transition:padding .3s;
         transition:padding .3s;
-        border:0
+        border:1px solid white;
     }
     .navbar-default .navbar-brand{
-        font-size:2em;
+        font-size:5em;
         -webkit-transition:all .3s;
         -moz-transition:all .3s;
         transition:all .3s
