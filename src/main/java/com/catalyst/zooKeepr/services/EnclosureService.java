@@ -14,8 +14,6 @@ public interface EnclosureService {
 
 	void deleteEnclosure(Integer id);
 
-	
-
-	
+	Enclosure getEnclosureById(Integer id);
 
 }

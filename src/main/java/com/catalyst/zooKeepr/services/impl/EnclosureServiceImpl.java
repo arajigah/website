@@ -19,6 +19,11 @@ public class EnclosureServiceImpl implements EnclosureService {
 	public List<Enclosure> getEnclosure() {
 		return enclosureDao.getEnclosure();
 	}
+	
+	@Override
+	public Enclosure getEnclosureById(Integer id) {
+		return enclosureDao.getByEnclosureId(id);
+	}
 
 	@Override
 	public void addEnclosure(Enclosure enclosure) {
@@ -38,7 +43,5 @@ public class EnclosureServiceImpl implements EnclosureService {
 	public void setEnclosureDao(EnclosureDao enclosureDao) {
 		this.enclosureDao = enclosureDao;
 	}
-
-	
 
 }

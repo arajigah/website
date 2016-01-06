@@ -1,6 +1,7 @@
 package com.catalyst.zooKeepr.entities;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,12 +18,13 @@ public class Animal {
 	private int id;
 	
 	@NotNull
+	@Column(unique = true)
 	private String name;
 	
 	@NotNull
 	private String sciName;
 	
-	@ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "food_id")
 	private Food favFood;
 	
