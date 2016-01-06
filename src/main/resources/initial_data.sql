@@ -1,0 +1,10 @@
+INSERT INTO vendor (name) VALUES ('Vick''s Veggies');
+INSERT INTO vendor (name) VALUES ('Mel''s Meats');
+INSERT INTO vendor (name) VALUES ('Freddy''s Fruits');
+INSERT INTO foodcategory (category) VALUES ('Vegetable');
+INSERT INTO foodcategory (category) VALUES ('Fruit');
+INSERT INTO foodcategory (category) VALUES ('Meat');
+INSERT INTO foodcategory (category) VALUES ('Fish');
+INSERT INTO enclosurecondition (condition) VALUES ('Clean');
+INSERT INTO enclosurecondition (condition) VALUES ('Untidy');
+INSERT INTO enclosurecondition (condition) VALUES ('Dirty');

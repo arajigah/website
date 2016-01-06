@@ -31,8 +31,8 @@ public class EnclosureServiceImpl implements EnclosureService {
 	}
 
 	@Override
-	public void deleteEnclosure(Enclosure enclosure) {
-		enclosureDao.delete(enclosure);
+	public void deleteEnclosure(Integer id) {
+		enclosureDao.delete(id);
 	}
 
 	public void setEnclosureDao(EnclosureDao enclosureDao) {

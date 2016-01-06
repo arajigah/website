@@ -12,7 +12,7 @@ public interface EnclosureService {
 
 	void updateEnclosure(Enclosure enclosure);
 
-	void deleteEnclosure(Enclosure enclosure);
+	void deleteEnclosure(Integer id);
 
 	
 

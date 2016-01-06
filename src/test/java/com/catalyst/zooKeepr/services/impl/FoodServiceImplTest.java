@@ -45,6 +45,14 @@ public class FoodServiceImplTest {
 	}
 	
 	@Test
+	public void testUpdateFoodValid() {
+		Food f = new Food();
+		f.setName("strawberries");
+		target.updateFood(f);
+		verify(mockFoodDao, times(1)).update(f);
+	}
+	
+	@Test
 	public void testGetFood() {
 		int expected = 1;
 		List<Food> actualFoodList = new ArrayList<Food>();
