@@ -1,5 +1,5 @@
 html{
-    background: url('../img/african_lion.jpg') no-repeat center center;
+    background: url('../img/elephant_desert.jpg') no-repeat center center;
     min-height: 100%;
     background-size: cover;
 }
@@ -13,7 +13,7 @@ html{
 .navbar-default .navbar-brand{
     color:#fed136;
     font-family:"Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
-    
+    /* text-shadow: 2px 2px black; */
 }
 
 .navbar-default .navbar-brand:hover,
@@ -47,6 +47,7 @@ html{
     font-weight:400;
     letter-spacing:1px;
     color:#fff;
+   /*  text-shadow: 2px 2px black; */
 }
 
 .navbar-default .nav li a:hover,
@@ -74,10 +75,10 @@ html{
         -webkit-transition:padding .3s;
         -moz-transition:padding .3s;
         transition:padding .3s;
-        border:1px solid white;
+        border:0;
     }
     .navbar-default .navbar-brand{
-        font-size:5em;
+        font-size:4.5em;
         -webkit-transition:all .3s;
         -moz-transition:all .3s;
         transition:all .3s
