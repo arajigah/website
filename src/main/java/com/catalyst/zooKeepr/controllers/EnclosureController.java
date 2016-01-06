@@ -23,6 +23,11 @@ public class EnclosureController {
 		return enclosureService.getEnclosure();
 	}
 	
+	@RequestMapping(value="/enclosure/{id}", method=RequestMethod.GET)
+	public Enclosure getEnclosureById(@PathVariable Integer id) {
+		return enclosureService.getEnclosureById(id);
+	}
+	
 	@RequestMapping(value="/enclosure", method=RequestMethod.POST)
 	public void addEnclosure(@RequestBody Enclosure enclosure) {
 		System.out.println(enclosure);

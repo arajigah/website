@@ -12,5 +12,7 @@ public interface EnclosureDao {
 
 	void update(Enclosure enclosure);
 
-	void delete(Integer id);	
+	void delete(Integer id);
+
+	Enclosure getByEnclosureId(Integer id);	
 }

@@ -26,6 +26,7 @@ public class EnclosureDaoHibernate implements EnclosureDao {
 	public List<Enclosure> getEnclosure() {
 		return em.createQuery("SELECT e FROM Enclosure e", Enclosure.class).getResultList();
 	}
+	
 
 	@Override
 	public void add(Enclosure enclosure) {
@@ -39,13 +40,17 @@ public class EnclosureDaoHibernate implements EnclosureDao {
 
 	@Override
 	public void delete(Integer id) {
-		Enclosure enclosure = getEnclocureById(id);
+		Enclosure enclosure = getEnclosureById(id);
 		em.remove(enclosure);
 	}
 	
-	public Enclosure getEnclocureById(Integer id){
+	/*public Enclosure getEnclosureById(Integer id){
 		return em.createQuery("SELECT e FROM Enclosure e WHERE e.id = :id", Enclosure.class).setParameter("id", id).getSingleResult();
-		
+	}*/
+
+
+	public Enclosure getByEnclosureId(Integer id) {
+		return em.createQuery("SELECT e FROM Enclosure e WHERE e.id = :id", Enclosure.class).setParameter("id", id).getSingleResult();
 	}
 
 }
