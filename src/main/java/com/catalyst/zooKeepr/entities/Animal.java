@@ -22,7 +22,7 @@ public class Animal {
 	@NotNull
 	private String sciName;
 	
-	@ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "food_id")
 	private Food favFood;
 	
