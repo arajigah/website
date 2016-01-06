@@ -24,7 +24,7 @@ public class Food {
 	@JoinColumn(name = "vendor_id")
 	private Vendor vendor;
 	
-	@ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "foodCategory_id")
 	private FoodCategory category;
 	
