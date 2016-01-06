@@ -5,22 +5,22 @@ html{
 }
 
 .navbar-default{
-    background-color:#222;
+    background-color:#ffffff;
     border-color:transparent;
-    
 }
 
 .navbar-default .navbar-brand{
     color:#fed136;
     font-family:"Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
-    /* text-shadow: 2px 2px black; */
+    /* text-shadow: 0.5px 0.5px black; */
 }
 
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:active,
 .navbar-default .navbar-brand.active{
-    color:#fec503;
+    color:#fed136;
+    text-shadow: 2px 2px black;
 }
 
 .navbar-default .navbar-collapse{
@@ -47,13 +47,13 @@ html{
     font-weight:400;
     letter-spacing:1px;
     color:#fff;
-   /*  text-shadow: 2px 2px black; */
 }
 
 .navbar-default .nav li a:hover,
 .navbar-default .nav li a:focus{
     color:#fed136;
     outline:0;
+    text-shadow: 0.5px 0.5px black;
 }
 
 .navbar-default .navbar-nav>.active>a{
@@ -79,9 +79,9 @@ html{
     }
     .navbar-default .navbar-brand{
         font-size:4.5em;
-        -webkit-transition:all .3s;
-        -moz-transition:all .3s;
-        transition:all .3s
+        -webkit-transition:all .5s;
+        -moz-transition:all .5s;
+        transition:all .5s
     }
     .navbar-default .navbar-nav>.active>a{
         border-radius:3px
