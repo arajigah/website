@@ -39,9 +39,17 @@ public class AnimalServiceImplTest {
 	@Test
 	public void testAddAnimalValid() {
 		Animal e = new Animal();
-		e.setName("Animal");
+		e.setName("monkey");
 		target.addAnimal(e);
 		verify(mockAnimalDao, times(1)).add(e);
+	}
+	
+	@Test
+	public void testUpdateAnimalValid() {
+		Animal e = new Animal();
+		e.setName("bird");
+		target.updateAnimal(e);
+		verify(mockAnimalDao, times(1)).update(e);
 	}
 	
 	@Test

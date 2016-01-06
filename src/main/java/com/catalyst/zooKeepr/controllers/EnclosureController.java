@@ -35,9 +35,9 @@ public class EnclosureController {
 		enclosureService.updateEnclosure(enclosure);
 	}
 	
-	@RequestMapping(value="/enclosure", method=RequestMethod.DELETE)
-	public void deleteEnclosure(@RequestBody Enclosure enclosure) {
-		enclosureService.deleteEnclosure(enclosure);
+	@RequestMapping(value="/enclosure/{id}", method=RequestMethod.DELETE)
+	public void deleteEnclosure(@PathVariable Integer id) {
+		enclosureService.deleteEnclosure(id);
 	}
 
 }
