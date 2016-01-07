@@ -10,4 +10,6 @@ public interface FoodCategoryDao {
 
 	void add(FoodCategory foodCategory);
 
+	FoodCategory getFoodCategoryById(Integer id);
+
 }

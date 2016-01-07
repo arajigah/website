@@ -10,4 +10,6 @@ public interface VendorDao {
 
 	void add(Vendor vendor);
 
+	Vendor getVendorById(Integer id);
+
 }

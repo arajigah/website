@@ -32,4 +32,10 @@ public class VendorDaoHibernate implements VendorDao {
 		em.persist(vendor);
 	}
 
+	@Override
+	public Vendor getVendorById(Integer id) {
+		return em.createQuery("SELECT v FROM Vendor v WHERE v.id = :id", Vendor.class)
+				.setParameter("id", id).getSingleResult();
+	}
+
 }

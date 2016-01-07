@@ -61,4 +61,10 @@ public class AnimalServiceImplTest {
 		when(mockAnimalDao.getAllAnimals()).thenReturn(actualAnimalList);
 		assertEquals(expected, target.getAllAnimals().size());
 	}
+	
+	@Test
+	public void testGetAnimalsByIdSuccess() {
+		target.getAnimalById(1);
+		verify(mockAnimalDao, times(1)).getAnimalById(1);
+	}
 }

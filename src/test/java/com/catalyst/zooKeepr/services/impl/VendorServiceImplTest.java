@@ -54,4 +54,10 @@ public class VendorServiceImplTest {
 		when(mockVendorDao.getVendor()).thenReturn(actualVendorList);
 		assertEquals(expected, target.getAllVendors().size());
 	}
+	
+	@Test
+	public void testGetVendorByIdSuccess() {
+		target.getVendorById(1);
+		verify(mockVendorDao, times(1)).getVendorById(1);
+	}
 }

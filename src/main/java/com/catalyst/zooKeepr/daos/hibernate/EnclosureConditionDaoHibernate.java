@@ -32,4 +32,10 @@ public class EnclosureConditionDaoHibernate implements EnclosureConditionDao {
 		em.persist(enclosureCondition);
 	}
 
+	@Override
+	public EnclosureCondition getEnclosureConditionById(Integer id) {
+		return em.createQuery("SELECT s FROM EnclosureCondition s WHERE s.id = :id", EnclosureCondition.class)
+				.setParameter("id", id).getSingleResult();
+	}
+
 }

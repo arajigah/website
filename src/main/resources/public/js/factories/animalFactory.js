@@ -1,7 +1,7 @@
 angular.module('zooKeepr').factory('animalFactory', ['$http', function($http){
     return {
         getAllAnimals: function() {
-            return $http.get('/animal')
+            return $http.get('/animal');
         },
         
         getAnimalById: function(id) {

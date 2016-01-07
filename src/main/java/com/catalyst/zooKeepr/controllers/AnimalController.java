@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.catalyst.zooKeepr.entities.Animal;
+import com.catalyst.zooKeepr.entities.Enclosure;
 import com.catalyst.zooKeepr.services.AnimalService;
 
 @RestController
@@ -21,6 +22,11 @@ public class AnimalController {
 	@RequestMapping(value="/animal", method=RequestMethod.GET)
 	public List<Animal> getAllAnimals() {
 		return animalService.getAllAnimals();
+	}
+	
+	@RequestMapping(value="/animal/{id}", method=RequestMethod.GET)
+	public Animal getAnimalById(@PathVariable Integer id) {
+		return animalService.getAnimalById(id);
 	}
 	
 	@RequestMapping(value="/animal", method=RequestMethod.POST)

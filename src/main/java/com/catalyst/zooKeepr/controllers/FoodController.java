@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.catalyst.zooKeepr.entities.Enclosure;
 import com.catalyst.zooKeepr.entities.Food;
 import com.catalyst.zooKeepr.services.FoodService;
 
@@ -21,6 +22,11 @@ public class FoodController {
 	@RequestMapping(value="/food", method=RequestMethod.GET) 
 	public List<Food> getAllFood() {  
 		return foodService.getAllFood();
+	}
+	
+	@RequestMapping(value="/food/{id}", method=RequestMethod.GET)
+	public Food getFoodById(@PathVariable Integer id) {
+		return foodService.getFoodById(id);
 	}
 	
 	@RequestMapping(value="/food", method=RequestMethod.POST)

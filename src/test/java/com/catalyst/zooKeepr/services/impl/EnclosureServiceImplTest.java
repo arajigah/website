@@ -63,6 +63,12 @@ public class EnclosureServiceImplTest {
 	}
 	
 	@Test
+	public void testGetEnclosureByIdSuccess() {
+		target.getEnclosureById(1);
+		verify(mockEnclosureDao, times(1)).getEnclosureById(1);
+	}
+	
+	@Test
 	public void testRemoveEnclosure() {
 		target.deleteEnclosure(1);
 		verify(mockEnclosureDao, times(1)).delete(1);

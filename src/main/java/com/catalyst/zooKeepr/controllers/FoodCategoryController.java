@@ -3,6 +3,7 @@ package com.catalyst.zooKeepr.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,6 +21,11 @@ public class FoodCategoryController {
 	@RequestMapping(value="/foodCategory", method=RequestMethod.GET)
 	public List<FoodCategory> getAllFoodCategories() {
 		return foodCategoryService.getAllFoodCategories();
+	}
+	
+	@RequestMapping(value="/foodCategory/{id}", method=RequestMethod.GET)
+	public FoodCategory getFoodCategoryById(@PathVariable Integer id) {
+		return foodCategoryService.getFoodCategoryById(id);
 	}
 	
 	@RequestMapping(value="/foodCategory", method=RequestMethod.POST)

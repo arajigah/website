@@ -37,4 +37,10 @@ public class FoodDaoHibernate implements FoodDao {
 		em.merge(food);
 	}
 
+	@Override
+	public Food getFoodById(Integer id) {
+		return em.createQuery("SELECT f FROM Food f WHERE f.id = :id", Food.class)
+				.setParameter("id", id).getSingleResult();
+	}
+
 }

@@ -19,6 +19,11 @@ public class VendorServiceImpl implements VendorService {
 	public List<Vendor> getAllVendors() {
 		return vendorDao.getVendor();
 	}
+	
+	@Override
+	public Vendor getVendorById(Integer id) {
+		return vendorDao.getVendorById(id);
+	}
 
 	@Override
 	public void addVendor(Vendor vendor) {

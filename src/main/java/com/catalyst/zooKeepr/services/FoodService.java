@@ -12,4 +12,6 @@ public interface FoodService {
 
 	void updateFood(Food food);
 
+	Food getFoodById(Integer id);
+
 }

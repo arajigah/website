@@ -54,4 +54,10 @@ public class FoodCategoryServiceImplTest {
 		assertEquals(expected, target.getAllFoodCategories().size());
 	}
 	
+	@Test
+	public void testGetFoodCategoriesByIdSuccess() {
+		target.getFoodCategoryById(1);
+		verify(mockFoodCategoryDao, times(1)).getFoodCategoryById(1);
+	}
+	
 }

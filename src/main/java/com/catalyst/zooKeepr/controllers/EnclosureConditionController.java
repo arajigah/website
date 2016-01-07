@@ -3,6 +3,7 @@ package com.catalyst.zooKeepr.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,6 +21,11 @@ public class EnclosureConditionController {
 	@RequestMapping(value="/condition", method=RequestMethod.GET)
 	public List<EnclosureCondition> getAllEnclosureConditions() {
 		return enclosureConditionService.getAllEnclosureConditions();
+	}
+	
+	@RequestMapping(value="/condition/{id}", method=RequestMethod.GET)
+	public EnclosureCondition getEnclosureConditionById(@PathVariable Integer id) {
+		return enclosureConditionService.getEnclosureConditionById(id);
 	}
 	
 	@RequestMapping(value="/condition", method=RequestMethod.POST)

@@ -15,4 +15,4 @@ function($scope, $http, $log, enclosureFactory){
 	};
 	
 	$scope.getEnclosureList();
-)]};
+}]);

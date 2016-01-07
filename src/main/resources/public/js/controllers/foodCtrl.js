@@ -16,4 +16,4 @@ function($scope, $http, $log, foodFactory){
 	};
 	
 	$scope.getFoodList();
-])};
+}]);

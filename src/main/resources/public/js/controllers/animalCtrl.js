@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('zooKeepr').controller('foodCtrl', ['$scope', '$http', '$log', 'foodFactory', 
-function($scope, $http, $log, foodFactory){
+angular.module('zooKeepr').controller('animalCtrl', ['$scope', '$http', '$log', 'animalFactory', 
+function($scope, $http, $log, animalFactory){
 	
 	$scope.getAnimalList = function() {
 		animalFactory.getAllAnimals().then(
@@ -16,4 +16,4 @@ function($scope, $http, $log, foodFactory){
 	};
 	
 	$scope.getAnimalList();
-])};
+}]);

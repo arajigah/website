@@ -12,4 +12,6 @@ public interface FoodDao {
 
 	void update(Food food);
 
+	Food getFoodById(Integer id);
+
 }

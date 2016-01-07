@@ -9,5 +9,7 @@ public interface VendorService {
 	List<Vendor> getAllVendors();
 
 	void addVendor(Vendor vendor);
+
+	Vendor getVendorById(Integer id);
 	
 }

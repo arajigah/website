@@ -32,4 +32,10 @@ public class FoodCategoryDaoHibernate implements FoodCategoryDao {
 		em.persist(foodCategory);
 	}
 
+	@Override
+	public FoodCategory getFoodCategoryById(Integer id) {
+		return em.createQuery("SELECT c FROM FoodCategory c WHERE c.id = :id", FoodCategory.class)
+				.setParameter("id", id).getSingleResult();
+	}
+
 }

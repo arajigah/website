@@ -37,4 +37,10 @@ public class AnimalDaoHibernate implements AnimalDao{
 		em.merge(animal);
 	}
 
+	@Override
+	public Animal getAnimalById(Integer id) {
+		return em.createQuery("SELECT a FROM Animal a WHERE a.id = :id", Animal.class)
+				.setParameter("id", id).getSingleResult();
+	}
+
 }

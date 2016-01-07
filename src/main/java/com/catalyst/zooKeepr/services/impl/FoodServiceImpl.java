@@ -19,6 +19,11 @@ public class FoodServiceImpl implements FoodService {
 	public List<Food> getAllFood() {
 		return foodDao.getFood();
 	}
+	
+	@Override
+	public Food getFoodById(Integer id) {
+		return foodDao.getFoodById(id);
+	}
 
 	@Override
 	public void addFood(Food food) {
@@ -31,8 +36,7 @@ public class FoodServiceImpl implements FoodService {
 	}
 
 	public void setFoodDao(FoodDao foodDao) {
-		this.foodDao = foodDao;
-		
+		this.foodDao = foodDao;		
 	}
 
 }

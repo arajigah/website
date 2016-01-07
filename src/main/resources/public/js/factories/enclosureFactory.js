@@ -1,7 +1,7 @@
 angular.module('zooKeepr').factory('enclosureFactory', ['$http', function($http){
     return {
         getAllEnclosures: function() {
-            return $http.get('/enclosure')
+            return $http.get('/enclosure');method=RequestMethod.GETmethod=RequestMethod.GETmethod=RequestMethod.GET
         },
         
         getEnclosuresById: function(id) {

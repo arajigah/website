@@ -29,4 +29,9 @@ public class FoodCategoryServiceImpl implements FoodCategoryService {
 		this.foodCategoryDao = foodCategoryDao;
 	}
 
+	@Override
+	public FoodCategory getFoodCategoryById(Integer id) {
+		return foodCategoryDao.getFoodCategoryById(id);
+	}
+
 }

@@ -12,4 +12,6 @@ public interface AnimalService {
 
 	void updateAnimal(Animal animal);
 
+	Animal getAnimalById(Integer id);
+
 }

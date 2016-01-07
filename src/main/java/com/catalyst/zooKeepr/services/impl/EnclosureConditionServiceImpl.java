@@ -19,6 +19,11 @@ public class EnclosureConditionServiceImpl implements EnclosureConditionService 
 	public List<EnclosureCondition> getAllEnclosureConditions() {
 		return enclosureConditionDao.getEnclosureCondition();
 	}
+	
+	@Override
+	public EnclosureCondition getEnclosureConditionById(Integer id) {
+		return enclosureConditionDao.getEnclosureConditionById(id);
+	}
 
 	@Override
 	public void addEnclosureCondition(EnclosureCondition enclosureCondition) {

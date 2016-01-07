@@ -11,6 +11,8 @@ public interface AnimalDao {
 	void add(Animal animal);
 
 	void update(Animal animal);
+
+	Animal getAnimalById(Integer id);
 	
 	
 

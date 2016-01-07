@@ -53,4 +53,10 @@ public class EnclosureConditionServiceImplTest {
 		when(mockEnclosureConditionDao.getEnclosureCondition()).thenReturn(actualEnclosureConditionList);
 		assertEquals(expected, target.getAllEnclosureConditions().size());
 	}
+	
+	@Test
+	public void testGetEnclosureConditionsByIdSuccess() {
+		target.getEnclosureConditionById(1);
+		verify(mockEnclosureConditionDao, times(1)).getEnclosureConditionById(1);
+	}
 }

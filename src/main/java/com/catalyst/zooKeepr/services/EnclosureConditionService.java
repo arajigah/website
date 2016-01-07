@@ -9,5 +9,7 @@ public interface EnclosureConditionService {
 	List<EnclosureCondition> getAllEnclosureConditions();
 
 	void addEnclosureCondition(EnclosureCondition enclosureCondition);
+
+	EnclosureCondition getEnclosureConditionById(Integer id);
 	
 }

@@ -10,4 +10,6 @@ public interface FoodCategoryService {
 
 	void addFoodCategory(FoodCategory foodCategory);
 
+	FoodCategory getFoodCategoryById(Integer id);
+
 }

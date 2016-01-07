@@ -61,4 +61,10 @@ public class FoodServiceImplTest {
 		when(mockFoodDao.getFood()).thenReturn(actualFoodList);
 		assertEquals(expected, target.getAllFood().size());
 	}
+	
+	@Test
+	public void testGetFoodByIdSuccess() {
+		target.getFoodById(1);
+		verify(mockFoodDao, times(1)).getFoodById(1);
+	}
 }

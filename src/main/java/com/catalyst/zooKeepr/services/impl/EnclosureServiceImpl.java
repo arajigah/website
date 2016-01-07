@@ -22,7 +22,7 @@ public class EnclosureServiceImpl implements EnclosureService {
 	
 	@Override
 	public Enclosure getEnclosureById(Integer id) {
-		return enclosureDao.getByEnclosureId(id);
+		return enclosureDao.getEnclosureById(id);
 	}
 
 	@Override

@@ -10,4 +10,6 @@ public interface EnclosureConditionDao {
 
 	void add(EnclosureCondition enclosureCondition);
 
+	EnclosureCondition getEnclosureConditionById(Integer id);
+
 }
