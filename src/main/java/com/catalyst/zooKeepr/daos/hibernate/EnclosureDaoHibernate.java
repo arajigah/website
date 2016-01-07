@@ -40,13 +40,9 @@ public class EnclosureDaoHibernate implements EnclosureDao {
 
 	@Override
 	public void delete(Integer id) {
-		Enclosure enclosure = getEnclosureById(id);
+		Enclosure enclosure = getByEnclosureId(id);
 		em.remove(enclosure);
 	}
-	
-	/*public Enclosure getEnclosureById(Integer id){
-		return em.createQuery("SELECT e FROM Enclosure e WHERE e.id = :id", Enclosure.class).setParameter("id", id).getSingleResult();
-	}*/
 
 
 	public Enclosure getByEnclosureId(Integer id) {

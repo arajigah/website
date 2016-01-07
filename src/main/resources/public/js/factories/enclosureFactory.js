@@ -1,11 +1,11 @@
 angular.module('zooKeepr').factory('enclosureFactory', ['$http', function($http){
     return {
-        getEnclosures: function() {
+        getAllEnclosures: function() {
             return $http.get('/enclosure')
         },
         
         getEnclosuresById: function(id) {
-            return $http.get('/enclosure' + id);
+            return $http.get('/enclosure/' + id);
         },
         
         addEnclosure: function(animal) {
@@ -13,7 +13,7 @@ angular.module('zooKeepr').factory('enclosureFactory', ['$http', function($http)
         },
         
         deleteEnclosureById: function(id) {
-            return $http.remove('/enclosure' + id);
+            return $http.delete('/enclosure/' + id);
         }
     }
 }]);
