@@ -5,14 +5,12 @@ angular.module('zooKeepr').factory('animalFactory', ['$http', function($http){
         },
         
         getAnimalById: function(id) {
-            return $http.get('/animals' + id);
+            return $http.get('/animal/' + id);
         },
         
         addAnimal: function(animal) {
             return $http.post('/animal', animal);
-        },
-        
-        updateAnimal: function() {
         }
+        
     }
 }]);
