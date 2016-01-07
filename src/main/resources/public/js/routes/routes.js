@@ -5,17 +5,18 @@ angular.module('zooKeepr').config(['$stateProvider', '$urlRouterProvider', funct
     $urlRouterProvider.otherwise('/');
     
     $stateProvider.state('enclosure', {
-        url:'/enclosure',
+        url:'/enclosures',
         templateUrl: 'templates/enclosure.tpl.html',
-        controller: ''
+        controller: 'contentCtrl'
     })
     .state('animal', {
-        url:'/animal',
+        url:'/animals',
         templateUrl: 'templates/animal.tpl.html',
-        controller: ''
+        controller: 'contentCtrl'
     })
     .state('food', {
         url:'/food',
-        templateUrl: 'templates/food.tpl.html'
+        templateUrl: 'templates/food.tpl.html',
+        controller: 'contentCtrl'
     });
 }]);

@@ -1,6 +1,6 @@
 angular.module('zooKeepr').factory('animalFactory', ['$http', function($http){
     return {
-        getAnimals: function() {
+        getAllAnimals: function() {
             return $http.get('/animal')
         },
         
