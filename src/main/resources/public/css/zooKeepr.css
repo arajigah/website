@@ -77,7 +77,8 @@ html{
         -webkit-transition:padding .3s;
         -moz-transition:padding .3s;
         transition:padding .3s;
-        border:0;
+        border: 1px solid red;
+        position: absolute;
     }
     .navbar-default .navbar-brand{
         font-size:4.5em;
@@ -95,4 +96,8 @@ html{
     .navbar-default.navbar-shrink .navbar-brand{
         font-size:1.5em
     }
+}
+
+.enclosureInfo{
+	border: 6px soild red;
 }

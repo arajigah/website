@@ -6,8 +6,8 @@ angular.module('zooKeepr').config(['$stateProvider', '$urlRouterProvider', funct
     
     $stateProvider.state('enclosure', {
         url:'/enclosures',
-        templateUrl: 'templates/enclosure.tpl.html',
-        controller: 'contentCtrl'
+        templateUrl: '/js/templates/enclosure.tpl.html',
+        controller: 'enclosureCtrl'
     })
     .state('animal', {
         url:'/animals',
