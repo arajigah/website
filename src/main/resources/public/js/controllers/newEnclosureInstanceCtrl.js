@@ -3,9 +3,6 @@
 angular.module('zooKeepr').controller('newEnclosureInstanceCtrl', ['$scope', '$location', '$uibModalInstance', 'enclosureFactory', 'animalFactory', 'enclosureConditonFactory',
 function($scope, $location, $uibModalInstance, enclosureFactory, animalFactory, enclosureConditonFactory){
 	
-	
-	
-	
 	$scope.getEnclosureCondtionList = function() {
 		enclosureConditonFactory.getAllEnclosureCoditions().then(
 				function(success){
@@ -32,7 +29,7 @@ function($scope, $location, $uibModalInstance, enclosureFactory, animalFactory, 
 	$scope.enclosure = {};
 	$scope.enclosure.name = "";
 	$scope.enclosure.numOfAnimals = "";
-	
+	$scope.enclosure.feedTime = "";
 	
 	
 	$scope.cancel = function() {

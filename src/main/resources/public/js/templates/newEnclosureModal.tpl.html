@@ -4,7 +4,19 @@
 		<h3 class="modal-title">Add New Enclosure</h3>
 	</div>
 	<div class="modal-body">
-		<h4>Email</h4>
+		<h4>Enclosure:</h4>
+		<input id="enclosureName" type="text" ng-model="enclosure.name" class="form-control" placeholder="Enter Enclosure Name" required>
+		
+		<h4>Animal: <select id="selectAnimal" ng-model="animal" ng-options"animal.name for animal in animals">
+						<option class="animalDropdown" value="" selected disabled hidden>Select Animal</option>
+					</select> 
+		</h4>
+		
+		<h4>Number Of Animals:</h4>
+		<input id="animalNum" type="number" ng-model="enclosure.numOfAnimals" class="form-control" placeholder="Enter Number" required>
+		
+		<h4></h4>
+		
 	</div>
 
 
