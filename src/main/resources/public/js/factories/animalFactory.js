@@ -10,7 +10,7 @@ angular.module('zooKeepr').factory('animalFactory', ['$http', function($http){
         
         addAnimal: function(animal) {
             return $http.post('/animal', animal);
-        }
+        },
         
         updateAnimalById: function(animal, id) {
         	return $http.put('/animal/' + id, animal);
