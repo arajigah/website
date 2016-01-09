@@ -55,7 +55,7 @@ function($scope, $location, $uibModalInstance, $log, animals, enclosureCondition
 		  $scope.enclosure.animal = $scope.animal;
 		  $scope.enclosure.feedTime = feedingTime;
 		  $scope.data = JSON.stringify($scope.enclosure);
-		  enclosureFactory.addEnclosure($scope.data).then(function(results){
+		  enclosureFactory.updateEnclosure($scope.data).then(function(results){
 			  $uibModalInstance.dismiss('saved');
 		  });
 		  
