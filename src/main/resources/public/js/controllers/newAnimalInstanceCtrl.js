@@ -15,6 +15,7 @@ function($scope, $location, $uibModalInstance, $log, food, animalFactory){
 		$scope.data = JSON.stringify($scope.animal);
 		animalFactory.addAnimal($scope.data).then(function(results){
 			$uibModalInstance.dismiss('saved');
+			console.log("new animal saved");
 		});
 	};	
 	

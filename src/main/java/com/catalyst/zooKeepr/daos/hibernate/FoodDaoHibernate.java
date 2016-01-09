@@ -9,6 +9,7 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
 import com.catalyst.zooKeepr.daos.FoodDao;
+import com.catalyst.zooKeepr.entities.Enclosure;
 import com.catalyst.zooKeepr.entities.Food;
 
 @Repository
@@ -41,6 +42,12 @@ public class FoodDaoHibernate implements FoodDao {
 	public Food getFoodById(Integer id) {
 		return em.createQuery("SELECT f FROM Food f WHERE f.id = :id", Food.class)
 				.setParameter("id", id).getSingleResult();
+	}
+
+	@Override
+	public void delete(Integer id) {
+		Food food = getFoodById(id);
+		em.remove(food);
 	}
 
 }

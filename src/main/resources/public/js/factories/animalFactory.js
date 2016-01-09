@@ -12,5 +12,13 @@ angular.module('zooKeepr').factory('animalFactory', ['$http', function($http){
             return $http.post('/animal', animal);
         }
         
+        updateAnimalById: function(animal, id) {
+        	return $http.put('/animal/' + id, animal);
+        },
+        
+        deleteAnimalById: function(id) {
+        	return $http.delete('/animal/' + id);
+        }
+        
     }
 }]);

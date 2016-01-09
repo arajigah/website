@@ -14,4 +14,6 @@ public interface FoodDao {
 
 	Food getFoodById(Integer id);
 
+	void delete(Integer id);
+
 }

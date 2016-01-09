@@ -39,4 +39,10 @@ public class FoodServiceImpl implements FoodService {
 		this.foodDao = foodDao;		
 	}
 
+	@Override
+	public void deleteFood(Integer id) {
+		foodDao.delete(id);
+		
+	}
+
 }

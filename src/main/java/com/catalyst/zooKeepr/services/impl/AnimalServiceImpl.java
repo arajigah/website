@@ -39,4 +39,9 @@ public class AnimalServiceImpl implements AnimalService {
 		this.animalDao = animalDao;
 	}
 
+	@Override
+	public void deleteAnimal(Integer id) {
+		animalDao.delete(id);		
+	}
+
 }

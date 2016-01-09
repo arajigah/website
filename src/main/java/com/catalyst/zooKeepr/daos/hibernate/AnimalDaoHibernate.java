@@ -43,4 +43,10 @@ public class AnimalDaoHibernate implements AnimalDao{
 				.setParameter("id", id).getSingleResult();
 	}
 
+	@Override
+	public void delete(Integer id) {
+		Animal animal = getAnimalById(id);
+		em.remove(animal);
+	}
+
 }

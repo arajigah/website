@@ -22,7 +22,7 @@ public class Food {
 	@Column(unique = true)
 	private String name;
 	
-	@OneToOne(cascade = CascadeType.MERGE)
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "vendor_id")
 	private Vendor vendor;
 	

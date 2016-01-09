@@ -1,0 +1,23 @@
+<div>
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<td>Food</td>
+				<td>Category</td>
+				<td>Vendor</td>
+				<td>Update</td>
+				<td>Delete</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="food in foodList">
+				<td>{{food.name}}</td>
+				<td>{{food.category.category}}</td>
+				<td>{{food.vendor.name}}</td>
+				<td><button class="btn" type="submit" ng-click="updateFood('')">Update</button></td>
+				<td><button class="btn" type="submit" ng-click="deleteFood('')">Remove</button></td>
+			</tr>
+		</tbody>
+	</table>
+	<button ng-click="newFood()">New Food</button>
+</div>

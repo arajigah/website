@@ -16,7 +16,7 @@ angular.module('zooKeepr').config(['$stateProvider', '$urlRouterProvider', funct
     })
     .state('food', {
         url:'/food',
-        templateUrl: 'templates/food.tpl.html',
+        templateUrl: '/js/templates/food.tpl.html',
         controller: 'viewCtrl'
     });
 }]);

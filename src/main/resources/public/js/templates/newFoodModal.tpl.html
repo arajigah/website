@@ -1,0 +1,24 @@
+<div name="addNewFoodModal">
+	<div class="modal-header">
+		<h3 class="modal-title">Add New Food</h3>
+	</div>
+	<div class="modal-body">
+		<div class="col-md-12">
+			<input id="foodName" type="text" ng-model="food.name" class="form-control" placeholder="Enter Food Name" required>
+		</div>
+		
+		<select id="selectFoodCategory" ng-model="foodCategory" ng-options="foodCategory.category for foodCategory in foodCategories" class="form-control">
+				<option class="foodCategoryDropdown" value="" selected disabled hidden>Food Category</option>
+		</select>
+		
+		<div class="col-md-12">
+			<input id="vendorName" type="text" ng-model="food.vendor.name" class="form-control" placeholder="Enter Vendor Name" required>
+		</div>		
+	</div>		
+		
+	<div class="modal-footer">
+		<button class="btn btn-primary" type="submit" ng-click="addFood('')">Save</button>
+		<button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+	</div>
+	
+</div>

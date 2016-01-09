@@ -1,4 +1,4 @@
-angular.module('zooKeepr').factory('foodCategory', ['$http', function($http){
+angular.module('zooKeepr').factory('foodCategoryFactory', ['$http', function($http){
 	return {
 		getAllFoodCategories: function() {
 			return $http.get('/foodCategory');

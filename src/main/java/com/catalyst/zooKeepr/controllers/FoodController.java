@@ -38,5 +38,10 @@ public class FoodController {
 	public void updateFood(@PathVariable int id, @RequestBody Food food) {
 		foodService.updateFood(food);
 	}
+	
+	@RequestMapping(value="/food/{id}", method=RequestMethod.DELETE)
+	public void deleteFood(@PathVariable Integer id) {
+		foodService.deleteFood(id);
+	}
 
 }

@@ -1,6 +1,6 @@
 'use strict'
-angular.module('zooKeepr').controller('viewCtrl', ['$scope', '$http', '$log', '$uibModal', 'enclosureFactory', 'animalFactory', 'foodFactory', 'enclosureConditionFactory', 
-function($scope, $http, $log, $uibModal, enclosureFactory, animalFactory, foodFactory, enclosureConditionFactory){
+angular.module('zooKeepr').controller('viewCtrl', ['$scope', '$http', '$log', '$uibModal', 'enclosureFactory', 'animalFactory', 'foodFactory', 'enclosureConditionFactory', 'vendorFactory', 'foodCategoryFactory', 
+function($scope, $http, $log, $uibModal, enclosureFactory, animalFactory, foodFactory, enclosureConditionFactory, vendorFactory, foodCategoryFactory){
 	
 	
 	$scope.getEnclosureList = function() {
@@ -75,7 +75,13 @@ function($scope, $http, $log, $uibModal, enclosureFactory, animalFactory, foodFa
 			animation: $scope.animationsEnabled,
 		    templateUrl: 'js/templates/newFoodModal.tpl.html',
 		    controller: 'newFoodInstanceCtrl',
-		    size: size
+		    size: size,
+		    resolve: {vendors:function(vendorFactory){
+		    	return vendorFactory.getAllVendors();
+		    },
+		    foodCategories:function(foodCategoryFactory){
+		    	return foodCategoryFactory.getAllFoodCategories();
+		    }}
 		});
 	};
 	

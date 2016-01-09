@@ -13,6 +13,8 @@ public interface AnimalDao {
 	void update(Animal animal);
 
 	Animal getAnimalById(Integer id);
+
+	void delete(Integer id);
 	
 	
 
