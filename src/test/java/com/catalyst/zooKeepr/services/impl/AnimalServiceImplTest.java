@@ -70,6 +70,7 @@ public class AnimalServiceImplTest {
 	
 	@Test
 	public void testRemoveAnimal() {
-		
+		target.deleteAnimal(1);
+		verify(mockAnimalDao, times(1)).delete(1);
 	}
 }
