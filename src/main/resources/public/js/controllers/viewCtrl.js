@@ -81,7 +81,20 @@ function($scope, $http, $log, $uibModal, enclosureFactory, animalFactory, foodFa
 	  };
 	
 	
-	
+	  $scope.newEnclosure = function(size) {
+			var modalInstance = $uibModal.open({
+				animation: $scope.animationsEnabled,
+			    templateUrl: 'js/templates/newEnclosureModal.tpl.html',//change when new edit modal is created
+			    controller: 'newEnclosureInstanceCtrl',
+			    size: size,
+			    resolve: {animals:function(animalFactory){
+			    	return animalFactory.getAllAnimals();
+			    },
+			    enclosureConditions:function(enclosureConditionFactory){
+			    	return enclosureConditionFactory.getAllEnclosureConditions();
+			    }}
+			});
+		};
 	
 	
 	
