@@ -1,4 +1,6 @@
 <div class="enclosureInfo">
 		<h1>Enclosures</h1>
 		<div ng-repeat="enclosure in enclosureList">{{enclosure.name}}</div>
+		<button ng-click="newEnclosure()">New Enclosure</button>
+		<button class="btn btn-info" type="submit" ng-click="updateEnclosure('')">Update</button>
 </div>

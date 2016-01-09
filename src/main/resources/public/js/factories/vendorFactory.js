@@ -8,4 +8,4 @@ angular.module('zooKeepr').factory('vendorFactory', ['$http', function($http){
 			return $http.get('/vendor/' + id);
 		}
 	}
-}
+}]);

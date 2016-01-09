@@ -7,16 +7,16 @@ angular.module('zooKeepr').config(['$stateProvider', '$urlRouterProvider', funct
     $stateProvider.state('enclosure', {
         url:'/enclosures',
         templateUrl: '/js/templates/enclosure.tpl.html',
-        controller: 'enclosureCtrl'
+        controller: 'viewCtrl'
     })
     .state('animal', {
         url:'/animals',
         templateUrl: 'templates/animal.tpl.html',
-        controller: 'contentCtrl'
+        controller: 'viewCtrl'
     })
     .state('food', {
         url:'/food',
         templateUrl: 'templates/food.tpl.html',
-        controller: 'contentCtrl'
+        controller: 'viewCtrl'
     });
 }]);

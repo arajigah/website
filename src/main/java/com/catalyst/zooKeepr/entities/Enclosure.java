@@ -1,5 +1,7 @@
 package com.catalyst.zooKeepr.entities;
 
+import java.util.Date;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 public class Enclosure {
@@ -30,7 +34,9 @@ public class Enclosure {
 	private int numOfAnimals;
 	
 	@NotNull
-	private int feedTime;
+	@Column(columnDefinition = "TIME")
+	@JsonFormat(pattern = "hh:mm", timezone = "PST")
+	private Date feedTime;
 	
 	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "enclosureCondition_id")
@@ -60,10 +66,11 @@ public class Enclosure {
 	public void setNumOfAnimals(int numOfAnimals) {
 		this.numOfAnimals = numOfAnimals;
 	}
-	public int getFeedTime() {
+	
+	public Date getFeedTime() {
 		return feedTime;
 	}
-	public void setFeedTime(int feedTime) {
+	public void setFeedTime(Date feedTime) {
 		this.feedTime = feedTime;
 	}
 	public EnclosureCondition getCondition() {

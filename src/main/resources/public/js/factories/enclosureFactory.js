@@ -8,8 +8,12 @@ angular.module('zooKeepr').factory('enclosureFactory', ['$http', function($http)
             return $http.get('/enclosure/' + id);
         },
         
-        addEnclosure: function(animal) {
-            return $http.add('/enclosure', enclosure);
+        addEnclosure: function(enclosure) {
+            return $http.post('/enclosure', enclosure);
+        },
+        
+        updateEnclosureById: function(id) {
+        	return $http.put('/enclosure' + id);
         },
         
         deleteEnclosureById: function(id) {
