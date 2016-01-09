@@ -1,6 +1,27 @@
-<div class="enclosureInfo">
-		<h1>Enclosures</h1>
-		<div ng-repeat="enclosure in enclosureList">{{enclosure.name}}</div>
-		<button ng-click="newEnclosure()">New Enclosure</button>
-		<button class="btn btn-info" type="submit" ng-click="updateEnclosure('')">Update</button>
+<div>
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<td>Enclosure</td>
+				<td>Animal</td>
+				<td>Number of Animals</td>
+				<td>Feed Time</td>
+				<td>Enclosure Condition</td>
+				<td>Update</td>
+				<td>Remove</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="enclosure in enclosureList">
+				<td>{{enclosure.name}}</td>
+				<td>{{enclosure.animal.name}}</td>
+				<td>{{enclosure.numOfAnimals}}</td>
+				<td>{{enclosure.feedTime}}</td>
+				<td>{{enclosure.condition.condition}}</td>
+				<td><button class="btn" type="submit" ng-click="updateEnclosure('')">Update</button></td>
+				<td><button class="btn" type="submit" ng-click="deleteEnclosure('')">Remove</button></td>
+			</tr>
+		</tbody>
+	</table>
+	<button ng-click="newEnclosure()">New Enclosure</button>
 </div>

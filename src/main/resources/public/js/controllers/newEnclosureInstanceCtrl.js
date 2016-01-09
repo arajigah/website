@@ -10,13 +10,7 @@ function($scope, $location, $uibModalInstance, $log, animals, enclosureCondition
 	$scope.enclosure = {};
 	$scope.enclosure.name = "";
 	$scope.enclosure.numOfAnimals = "";
-	$scope.enclosure.feedTime = {};
-	
-	
-	$scope.cancel = function() {
-		$uibModalInstance.dismiss('cancel');
-	}
-	
+	$scope.enclosure.feedTime = {};	
 	
 	$scope.feedTime = new Date();
 	$scope.feedTime.setMinutes(0);
@@ -47,6 +41,8 @@ function($scope, $location, $uibModalInstance, $log, animals, enclosureCondition
 		  });
 	  };
 	  
-	 
+	  $scope.cancel = function() {
+			$uibModalInstance.dismiss('cancel');
+		};
 	  
 }]);

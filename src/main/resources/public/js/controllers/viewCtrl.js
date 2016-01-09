@@ -1,6 +1,6 @@
 'use strict'
-angular.module('zooKeepr').controller('viewCtrl', ['$scope', '$http', '$log', '$uibModal', 'enclosureFactory', 'animalFactory', 'foodFactory', 
-function($scope, $http, $log, $uibModal, enclosureFactory, animalFactory, foodFactory){
+angular.module('zooKeepr').controller('viewCtrl', ['$scope', '$http', '$log', '$uibModal', 'enclosureFactory', 'animalFactory', 'foodFactory', 'enclosureConditionFactory', 
+function($scope, $http, $log, $uibModal, enclosureFactory, animalFactory, foodFactory, enclosureConditionFactory){
 	
 	
 	$scope.getEnclosureList = function() {
@@ -63,7 +63,10 @@ function($scope, $http, $log, $uibModal, enclosureFactory, animalFactory, foodFa
 			animation: $scope.animationsEnabled,
 		    templateUrl: 'js/templates/newAnimalModal.tpl.html',
 		    controller: 'newAnimalInstanceCtrl',
-		    size: size
+		    size: size,
+		    resolve: {food:function(foodFactory){
+		    	return foodFactory.getAllFood();
+		    }}
 		});
 	};
 	
@@ -81,7 +84,7 @@ function($scope, $http, $log, $uibModal, enclosureFactory, animalFactory, foodFa
 	  };
 	
 	
-	  $scope.newEnclosure = function(size) {
+	  /*$scope.updateEnclosure = function(size) {
 			var modalInstance = $uibModal.open({
 				animation: $scope.animationsEnabled,
 			    templateUrl: 'js/templates/newEnclosureModal.tpl.html',//change when new edit modal is created
@@ -94,12 +97,6 @@ function($scope, $http, $log, $uibModal, enclosureFactory, animalFactory, foodFa
 			    	return enclosureConditionFactory.getAllEnclosureConditions();
 			    }}
 			});
-		};
-	
-	
-	
-	
-	
-	
+		};*/
 	
 }]);

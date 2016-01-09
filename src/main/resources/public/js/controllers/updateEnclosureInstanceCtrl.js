@@ -12,15 +12,6 @@ function($scope, $location, $uibModalInstance, $log, animals, enclosureCondition
 	$scope.enclosure.numOfAnimals = "";
 	$scope.enclosure.feedTime = {};
 	
-	$scope.animals = animals.data;
-	$scope.enclosureConditions = enclosureConditions.data;
-	$scope.animal = {};
-	$scope.enclosureCondition = {};
-	$scope.enclosure = {};
-	$scope.enclosure.name = "";
-	$scope.enclosure.numOfAnimals = "";
-	$scope.enclosure.feedTime = {};
-	
 	
 	$scope.cancel = function() {
 		$uibModalInstance.dismiss('cancel');
