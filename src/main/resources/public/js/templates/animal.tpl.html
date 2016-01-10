@@ -1,20 +1,18 @@
-<div>
+<div class="table-responsive" views>
 	<table class="table table-hover">
 		<thead>
 			<tr>
 				<td>Animal</td>
 				<td>Scientific Name</td>
 				<td>Favorite Food</td>
-				<td>Information</td>
 				<td>Update</td>
 			</tr>
 		</thead>
 		<tbody>
 			<tr ng-repeat="animal in animalList">
-				<td>{{animal.name}}</td>
+				<td><a href="{{animal.infoLink}}">{{animal.name}}</a></td>
 				<td>{{animal.sciName}}</td>
 				<td>{{animal.favFood.name}}</td>
-				<td><a href="{{animal.infoLink}}">{{animal.infoLink}}</a></td>
 				<td><button class="btn" type="submit" ng-click="updateAnimal('')">Update</button></td>
 			</tr>
 		</tbody>

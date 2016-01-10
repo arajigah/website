@@ -24,10 +24,6 @@ function($scope, $location, $uibModalInstance, $log, animals, enclosureCondition
 	    mstep: [1, 5, 10, 15, 25, 30]
 	  };
 	
-	  /*$scope.changed = function () {
-	    $log.log('Time changed to: ' + $scope.mytime);
-	  };
-	  */
 	  $scope.addEnclosure = function() {
 		  $scope.feedTime.setSeconds(0);
 		  $scope.feedTime.setMilliseconds(0);
