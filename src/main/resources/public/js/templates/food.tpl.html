@@ -10,9 +10,9 @@
 		</thead>
 		<tbody>
 			<tr ng-repeat="food in foodList">
-				<td>{{food.name}}</td>
-				<td>{{food.category.category}}</td>
-				<td>{{food.vendor.name}}</td>
+				<td ng-bind="food.name"></td>
+				<td ng-bind="food.category.category"></td>
+				<td ng-bind="food.vendor.name"></td>
 				<td><button class="btn" type="submit" ng-click="updateFood('')">Update</button></td>
 			</tr>
 		</tbody>

@@ -10,9 +10,9 @@
 		</thead>
 		<tbody>
 			<tr ng-repeat="animal in animalList">
-				<td><a href="{{animal.infoLink}}">{{animal.name}}</a></td>
-				<td>{{animal.sciName}}</td>
-				<td>{{animal.favFood.name}}</td>
+				<td ng-bind="animal.name"><a href="{{animal.infoLink}}"></a></td>
+				<td ng-bind="animal.sciName"></td>
+				<td ng-bind="animal.favFood.name"></td>
 				<td><button class="btn" type="submit" ng-click="updateAnimal('')">Update</button></td>
 			</tr>
 		</tbody>
