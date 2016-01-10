@@ -23,7 +23,7 @@ public class EnclosureSeleniumTest {
 	public void testAddNewEnclosure() {
 		driver.findElement(By.id("food")).click();
 		
-		new WebDriverWait(drive, 100).until(ExpectedConditions.pre)
+		new WebDriverWait(driver, 100).until(ExpectedConditions.presenceOfElementLocated(By.id("newFoodButton"))).click();
 		
 		new WebDriverWait(driver, 100).until(ExpectedConditions.presenceOfElementLocated(By.id("newEnclosureButton"))).click();
 		new WebDriverWait(driver, 300).until(ExpectedConditions.presenceOfElementLocated(By.id("enclosureName"))).sendKeys("Test Enclosure");
