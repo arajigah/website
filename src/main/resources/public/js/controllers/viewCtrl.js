@@ -41,6 +41,7 @@ function($scope, $http, $log, $uibModal, enclosureFactory, animalFactory, foodFa
 	$scope.getFoodList();
 	
 	
+	
 	$scope.animationsEnabled = true;
 	
 	$scope.newEnclosure = function(size) {
@@ -88,6 +89,14 @@ function($scope, $http, $log, $uibModal, enclosureFactory, animalFactory, foodFa
 	$scope.toggleAnimation = function () {
 	    $scope.animationsEnabled = !$scope.animationsEnabled;
 	  };
+	  
+	  
+	$scope.deleteEnclosure = function(id) {
+		$scope.data = JSON.stringify($scope.enclosure);
+		enclosureFactory.deleteEnclosureById(id).then(function(results){
+			console.log("enclosure deleted");
+		});
+	};
 	
 	
 	  /*$scope.updateEnclosure = function(size) {

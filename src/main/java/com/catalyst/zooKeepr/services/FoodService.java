@@ -14,6 +14,4 @@ public interface FoodService {
 
 	Food getFoodById(Integer id);
 
-	void deleteFood(Integer id);
-
 }

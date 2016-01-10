@@ -2,6 +2,7 @@
 	<table class="table table-hover">
 		<thead>
 			<tr>
+				<td>ID</td>
 				<td>Enclosure</td>
 				<td>Animal</td>
 				<td>Number of Animals</td>
@@ -13,13 +14,14 @@
 		</thead>
 		<tbody>
 			<tr ng-repeat="enclosure in enclosureList">
+				<td>{{enclosure.id}}</td>
 				<td>{{enclosure.name}}</td>
 				<td>{{enclosure.animal.name}}</td>
 				<td>{{enclosure.numOfAnimals}}</td>
 				<td>{{enclosure.feedTime}}</td>
 				<td>{{enclosure.condition.condition}}</td>
 				<td><button class="btn" type="submit" ng-click="updateEnclosure('')">Update</button></td>
-				<td><button class="btn" type="submit" ng-click="deleteEnclosure('')">Remove</button></td>
+				<td><button class="btn" type="submit" ng-click="deleteEnclosure(enclosure.id)">Remove</button></td>
 			</tr>
 		</tbody>
 	</table>

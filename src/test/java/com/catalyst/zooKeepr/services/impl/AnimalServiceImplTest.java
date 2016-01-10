@@ -68,9 +68,4 @@ public class AnimalServiceImplTest {
 		verify(mockAnimalDao, times(1)).getAnimalById(1);
 	}
 	
-	@Test
-	public void testRemoveAnimal() {
-		target.deleteAnimal(1);
-		verify(mockAnimalDao, times(1)).delete(1);
-	}
 }

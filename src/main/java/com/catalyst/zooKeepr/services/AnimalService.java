@@ -14,6 +14,4 @@ public interface AnimalService {
 
 	Animal getAnimalById(Integer id);
 
-	void deleteAnimal(Integer id);
-
 }

@@ -20,7 +20,7 @@ public class Enclosure {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 	
 	@NotNull
 	@Column(unique = true)
@@ -42,10 +42,10 @@ public class Enclosure {
 	@JoinColumn(name = "enclosureCondition_id")
 	private EnclosureCondition condition;
 	
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getName() {

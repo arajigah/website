@@ -35,7 +35,7 @@ public class EnclosureController {
 	}
 	
 	@RequestMapping(value="/enclosure/{id}", method=RequestMethod.PUT)
-	public void updateById(@PathVariable int id, @RequestBody Enclosure enclosure) {
+	public void updateById(@PathVariable Integer id, @RequestBody Enclosure enclosure) {
 		enclosure.setId(id);
 		enclosureService.updateEnclosure(enclosure);
 	}

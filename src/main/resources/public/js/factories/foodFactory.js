@@ -14,10 +14,6 @@ angular.module('zooKeepr').factory('foodFactory', ['$http', function($http){
         
         updateFoodById: function(food, id) {
         	return $http.put('/food/' + id, food);
-        },
-        
-        deleteFoodById: function(id) {
-        	return $http.delete('/food/' + id);
         }
     }
 }]);

@@ -39,10 +39,5 @@ public class AnimalController {
 		animal.setId(id);
 		animalService.updateAnimal(animal);
 	}
-	
-	@RequestMapping(value="/animal/{id}", method=RequestMethod.DELETE)
-	public void deleteAnimal(@PathVariable Integer id) {
-		animalService.deleteAnimal(id);
-	}
 
 }

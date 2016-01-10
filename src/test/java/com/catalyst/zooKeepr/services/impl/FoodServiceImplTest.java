@@ -68,9 +68,4 @@ public class FoodServiceImplTest {
 		verify(mockFoodDao, times(1)).getFoodById(1);
 	}
 	
-	@Test
-	public void testRemoveFood() {
-		target.deleteFood(1);
-		verify(mockFoodDao, times(1)).delete(1);
-	}
 }

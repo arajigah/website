@@ -44,10 +44,4 @@ public class FoodDaoHibernate implements FoodDao {
 				.setParameter("id", id).getSingleResult();
 	}
 
-	@Override
-	public void delete(Integer id) {
-		Food food = getFoodById(id);
-		em.remove(food);
-	}
-
 }

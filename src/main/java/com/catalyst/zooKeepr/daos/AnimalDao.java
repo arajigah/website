@@ -14,8 +14,4 @@ public interface AnimalDao {
 
 	Animal getAnimalById(Integer id);
 
-	void delete(Integer id);
-	
-	
-
 }
