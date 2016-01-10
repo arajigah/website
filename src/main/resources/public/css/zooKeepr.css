@@ -18,7 +18,8 @@ modal-body{
 [views] {
 	font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     text-transform:uppercase;
-    font-weight:400;    
+    font-weight:400;
+    text-align:center;    
 }
 
 .table-responsive{

@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('zooKeepr').controller('newFoodInstanceCtrl', ['$scope', '$location', '$uibModalInstance', '$log', 'vendors', 'foodCategories', 'foodFactory',
-function($scope, $location, $uibModalInstance, $log, vendors, foodCategories, foodFactory){
+angular.module('zooKeepr').controller('newFoodInstanceCtrl', ['$scope', '$location', '$uibModalInstance', '$log', '$state', 'vendors', 'foodCategories', 'foodFactory',
+function($scope, $location, $uibModalInstance, $log, $state, vendors, foodCategories, foodFactory){
 	
 	$scope.vendors = vendors.data;
 	$scope.vendor = {};
@@ -12,6 +12,10 @@ function($scope, $location, $uibModalInstance, $log, vendors, foodCategories, fo
 	$scope.food.vendor = {};
 	$scope.food.name = "";
 	
+	$scope.reloadRoute = function() {
+	    $state.reload();
+	};
+	
 	$scope.addFood = function() {
 		$scope.food.vendor = $scope.vendor;
 		$scope.food.category = $scope.foodCategory;
@@ -19,6 +23,7 @@ function($scope, $location, $uibModalInstance, $log, vendors, foodCategories, fo
 		console.log($scope.food);
 		foodFactory.addFood($scope.data).then(function(results){
 			$uibModalInstance.dismiss('saved');
+			$scope.reloadRoute();
 			console.log("new food saved");
 		});
 	};

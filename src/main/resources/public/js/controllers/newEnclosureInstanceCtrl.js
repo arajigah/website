@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('zooKeepr').controller('newEnclosureInstanceCtrl', ['$scope', '$location', '$uibModalInstance', '$log', 'animals', 'enclosureConditions', 'enclosureFactory',
-function($scope, $location, $uibModalInstance, $log, animals, enclosureConditions, enclosureFactory){
+angular.module('zooKeepr').controller('newEnclosureInstanceCtrl', ['$scope', '$location', '$uibModalInstance', '$log', '$state', 'animals', 'enclosureConditions', 'enclosureFactory',
+function($scope, $location, $uibModalInstance, $log, $state, animals, enclosureConditions, enclosureFactory){
 		
 	$scope.animals = animals.data;
 	$scope.enclosureConditions = enclosureConditions.data;
@@ -23,6 +23,10 @@ function($scope, $location, $uibModalInstance, $log, animals, enclosureCondition
 	    hstep: [1, 2, 3],
 	    mstep: [1, 5, 10, 15, 25, 30]
 	  };
+	  
+	  $scope.reloadRoute = function() {
+		    $state.reload();
+		};
 	
 	  $scope.addEnclosure = function() {
 		  $scope.feedTime.setSeconds(0);
@@ -34,6 +38,7 @@ function($scope, $location, $uibModalInstance, $log, animals, enclosureCondition
 		  $scope.data = JSON.stringify($scope.enclosure);
 		  enclosureFactory.addEnclosure($scope.data).then(function(results){
 			  $uibModalInstance.dismiss('saved');
+			  $scope.reloadRoute();
 			  console.log("new enclosure saved");
 		  });
 	  };

@@ -1,6 +1,6 @@
 'use strict'
-angular.module('zooKeepr').controller('viewCtrl', ['$scope', '$http', '$log', '$uibModal', 'enclosureFactory', 'animalFactory', 'foodFactory', 'enclosureConditionFactory', 'vendorFactory', 'foodCategoryFactory', 
-function($scope, $http, $log, $uibModal, enclosureFactory, animalFactory, foodFactory, enclosureConditionFactory, vendorFactory, foodCategoryFactory){
+angular.module('zooKeepr').controller('viewCtrl', ['$scope', '$http', '$log', '$uibModal', '$state', 'enclosureFactory', 'animalFactory', 'foodFactory', 'enclosureConditionFactory', 'vendorFactory', 'foodCategoryFactory', 
+function($scope, $http, $log, $uibModal, $state, enclosureFactory, animalFactory, foodFactory, enclosureConditionFactory, vendorFactory, foodCategoryFactory){
 	
 	
 	$scope.getEnclosureList = function() {
@@ -90,28 +90,16 @@ function($scope, $http, $log, $uibModal, enclosureFactory, animalFactory, foodFa
 	    $scope.animationsEnabled = !$scope.animationsEnabled;
 	  };
 	  
+	$scope.reloadRoute = function() {
+	    $state.reload();
+	};
 	  
 	$scope.deleteEnclosure = function(id) {
 		$scope.data = JSON.stringify($scope.enclosure);
 		enclosureFactory.deleteEnclosureById(id).then(function(results){
+			$scope.reloadRoute();
 			console.log("enclosure deleted");
 		});
 	};
-	
-	
-	  /*$scope.updateEnclosure = function(size) {
-			var modalInstance = $uibModal.open({
-				animation: $scope.animationsEnabled,
-			    templateUrl: 'js/templates/newEnclosureModal.tpl.html',//change when new edit modal is created
-			    controller: 'newEnclosureInstanceCtrl',
-			    size: size,
-			    resolve: {animals:function(animalFactory){
-			    	return animalFactory.getAllAnimals();
-			    },
-			    enclosureConditions:function(enclosureConditionFactory){
-			    	return enclosureConditionFactory.getAllEnclosureConditions();
-			    }}
-			});
-		};*/
 	
 }]);
