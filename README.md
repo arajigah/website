@@ -12,6 +12,6 @@ Download the ChromeDriver (URL--http://chromedriver.storage.googleapis.com/index
 The app is pre-populated with some data for Selenium Testing Purposes.
 
 ### FUNCTIONALITY ###
--Enclosure- Add, Update, View and Delete are functioning
--Animal- Add is functioning
--Food- Add is functioning
+* Enclosure: Add, Update, View and Delete are functioning
+* Animal: Add is functioning
+* Food: Add is functioning
