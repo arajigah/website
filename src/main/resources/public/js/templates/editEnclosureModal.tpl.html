@@ -1,34 +1,41 @@
-<div name="addNewEnclosureModal">
+<div name="editEnclosureModal">
 	<div class="modal-header">
-		<h3 class="modal-title">Add New Enclosure</h3>
+		<h3 class="modal-title">Edit Enclosure</h3>
 	</div>
 	<div class="modal-body">
 		<div class="col-md-12">
-			<input id="enclosureName" type="text" ng-model="enclosure.name" class="form-control" placeholder="Enter Enclosure Name" required>
+			<h4>Enclosure Name:</h4>
+			<input id="editEnclosureName" type="text" ng-model="enclosure.name" class="form-control" placeholder="Enter Enclosure Name" required>
 		</div>
 		
 		<div class="col-md-6">
-			<select id="selectAnimal" ng-model="animal" ng-options="animal.name for animal in animals" class="form-control">
+			<h4>Animal:</h4>
+			<select id="editSelectAnimal" ng-model="animal" ng-options="animal.name for animal in animals" class="form-control">
 				<option class="animalDropdown" value="" selected disabled hidden>Select Animal</option>
 			</select> 
 		</div>
 		
-		<div class="col-md-6">	
-			<input id="animalNum" type="number" min="0" ng-model="enclosure.numOfAnimals" class="form-control" placeholder="Enter Number" required>
+		<div class="col-md-6">
+			<h4>Number of Animals:</h4>	
+			<input id="editAnimalNum" type="number" min="0" ng-model="enclosure.numOfAnimals" class="form-control" placeholder="Enter Number" required>
 		</div>
 		
-		<div>
+		<div class="col-md-12">
+			<h4>Enclosure Condition:</h4>
+			<select id="editSelectCondition" ng-model="enclosureCondition" ng-options="enclosureCondition.condition for enclosureCondition in enclosureConditions" class="form-control">
+				<option class="conditionDropdown" value="" selected disabled hidden>Conditon</option>
+			</select>
+		</div>
+		
+		<div class="editFeedTime">
+			<h4>Feeding Time:</h4>
 			<uib-timepicker ng-model="feedTime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
 		</div>
 		
 		
-			<select id="selectCondition" ng-model="enclosureCondition" ng-options="enclosureCondition.condition for enclosureCondition in enclosureConditions" class="form-control">
-				<option class="conditionDropdown" value="" selected disabled hidden>Conditon</option>
-			</select>
-		
 		
 		<div class="modal-footer">
-			<button class="btn btn-primary" type="submit" ng-click="addEnclosure('')">Save</button>
+			<button class="btn btn-primary" type="submit" ng-click="updateEnclosure('')" id="updateEnclosure">Save</button>
 			<button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
 		</div>
 	</div>

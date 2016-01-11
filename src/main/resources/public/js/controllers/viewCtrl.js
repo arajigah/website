@@ -2,6 +2,14 @@
 angular.module('zooKeepr').controller('viewCtrl', ['$scope', '$http', '$log', '$uibModal', '$state', 'enclosureFactory', 'animalFactory', 'foodFactory', 'enclosureConditionFactory', 'vendorFactory', 'foodCategoryFactory', 
 function($scope, $http, $log, $uibModal, $state, enclosureFactory, animalFactory, foodFactory, enclosureConditionFactory, vendorFactory, foodCategoryFactory){
 	
+	$scope.toggleAnimation = function () {
+	    $scope.animationsEnabled = !$scope.animationsEnabled;
+	  };
+	  
+	  $scope.reloadRoute = function() {
+		    $state.reload();
+		};
+	
 	
 	$scope.getEnclosureList = function() {
 		enclosureFactory.getAllEnclosures().then(
@@ -86,13 +94,27 @@ function($scope, $http, $log, $uibModal, $state, enclosureFactory, animalFactory
 		});
 	};
 	
-	$scope.toggleAnimation = function () {
-	    $scope.animationsEnabled = !$scope.animationsEnabled;
-	  };
+	
 	  
-	$scope.reloadRoute = function() {
-	    $state.reload();
+	$scope.editEnclosure = function(id) {
+		var updateEnclosureModalInstance = $uibModal.open({
+			animation: $scope.animationsEnabled,
+			templateUrl: 'js/templates/editEnclosureModal.tpl.html',
+			controller: 'updateEnclosureInstanceCtrl',
+			resolve: {enclosureEdit:function(enclosureFactory){
+				return enclosureFactory.getEnclosuresById(id);
+			},
+			animals:function(animalFactory){
+				return animalFactory.getAllAnimals();
+			},
+			enclosureConditions:function(enclosureConditionFactory){
+				return enclosureConditionFactory.getAllEnclosureConditions();
+			}}
+		});
 	};
+	
+	  
+	
 	  
 	$scope.deleteEnclosure = function(id) {
 		$scope.data = JSON.stringify($scope.enclosure);

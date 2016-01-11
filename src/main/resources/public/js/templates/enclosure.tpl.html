@@ -20,8 +20,8 @@
 				<td ng-bind="enclosure.numOfAnimals"></td>
 				<td ng-bind="enclosure.feedTime"></td>
 				<td ng-bind="enclosure.condition.condition"></td>
-				<td><button class="btn" type="submit" ng-click="updateEnclosure('')">Update</button></td>
-				<td><button class="btn" type="submit" ng-click="deleteEnclosure(enclosure.id)">Remove</button></td>
+				<td><button class="btn" type="submit" ng-click="editEnclosure(enclosure.id)" id="editEnclosure">Update</button></td>
+				<td><button class="btn" type="submit" ng-click="deleteEnclosure(enclosure.id)" id="removeEnclosure">Remove</button></td>
 			</tr>
 		</tbody>
 	</table>

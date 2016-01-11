@@ -1,7 +1,14 @@
 'use strict';
 
-angular.module('zooKeepr').controller('updateEnclosureInstanceCtrl', ['$scope', '$location', '$uibModalInstance', '$log', 'animals', 'enclosureConditions', 'enclosureFactory',
-function($scope, $location, $uibModalInstance, $log, animals, enclosureConditions, enclosureFactory){
+angular.module('zooKeepr').controller('updateEnclosureInstanceCtrl', ['$scope', '$location', '$uibModalInstance', '$log', '$state', 'enclosureEdit', 'animals', 'enclosureConditions', 'enclosureFactory',
+function($scope, $location, $uibModalInstance, $log, $state, enclosureEdit, animals, enclosureConditions, enclosureFactory){
+	
+	$scope.cancel = function() {
+		$uibModalInstance.dismiss('cancel');
+	}
+	$scope.reloadRoute = function() {
+	    $state.reload();
+	};
 	
 	$scope.animals = animals.data;
 	$scope.enclosureConditions = enclosureConditions.data;
@@ -11,11 +18,6 @@ function($scope, $location, $uibModalInstance, $log, animals, enclosureCondition
 	$scope.enclosure.name = "";
 	$scope.enclosure.numOfAnimals = "";
 	$scope.enclosure.feedTime = {};
-	
-	
-	$scope.cancel = function() {
-		$uibModalInstance.dismiss('cancel');
-	}
 	
 	
 	$scope.feedTime = new Date();
@@ -30,7 +32,18 @@ function($scope, $location, $uibModalInstance, $log, animals, enclosureCondition
 	    mstep: [1, 5, 10, 15, 25, 30]
 	  };
 	  
-	  $scope.updateEnclosure = function() {
+	  $scope.enclosure.name = enclosureEdit.data.name;
+	  $scope.enclosure.numOfAnimals = enclosureEdit.data.numOfAnimals;
+	  $scope.animal= enclosureEdit.data.animal;
+	  $scope.enclosure.feedTime = enclosureEdit.data.feedTime;
+	  
+	  
+	  
+	  
+	  
+	  $scope.updateEnclosure = function(enclosure, animal, feedTime, numOfAnimals, condition) {
+		  $scope.enclosure.id = enclosureEdit.data.id;
+		  console.log(enclosureEdit.data);
 		  $scope.feedTime.setSeconds(0);
 		  $scope.feedTime.setMilliseconds(0);
 		  var feedingTime = $scope.feedTime.getTime()
@@ -38,7 +51,8 @@ function($scope, $location, $uibModalInstance, $log, animals, enclosureCondition
 		  $scope.enclosure.animal = $scope.animal;
 		  $scope.enclosure.feedTime = feedingTime;
 		  $scope.data = JSON.stringify($scope.enclosure);
-		  enclosureFactory.updateEnclosure($scope.data, $scope.enclosure.id).then(function(results){
+		  enclosureFactory.updateEnclosureById($scope.data, $scope.enclosure.id).then(function(results){
+			  $scope.reloadRoute();
 			  $uibModalInstance.dismiss('updated');
 		  });
 		  
