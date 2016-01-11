@@ -2,7 +2,6 @@
 	<table class="table table-hover">
 		<thead>
 			<tr>
-				<td>ID</td>
 				<td>Enclosure</td>
 				<td>Animal</td>
 				<td>Number of Animals</td>
@@ -14,7 +13,6 @@
 		</thead>
 		<tbody>
 			<tr ng-repeat="enclosure in enclosureList">
-				<td ng-bind="enclosure.id"></td>
 				<td ng-bind="enclosure.name"></td>
 				<td ng-bind="enclosure.animal.name"></td>
 				<td ng-bind="enclosure.numOfAnimals"></td>

@@ -2,23 +2,29 @@
 	<div class="modal-header">
 		<h3 class="modal-title">Add New Animal</h3>
 	</div>
-	<div class="modal-body">
+	<div class="modal-body animal">
 		<div class="col-md-12">
+			<h4>Animal:</h4>
 			<input id="animalName" type="text" ng-model="animal.name" class="form-control" placeholder="Enter Animal Name" required>
 		</div>
 		
 		<div class="col-md-12">
+			<h4>Scientific Name:</h4>
 			<input id="sciName" type="text" ng-model="animal.sciName" class="form-control" placeholder="Enter Scientific Name" required>
 		</div>
 		
-		<select id="selectFavFood" ng-model="food" ng-options="food.name for food in foods" class="form-control">
-				<option class="favFoodDropdown" value="" selected disabled hidden>Favorite Food</option>
-		</select>
+		<div class="col-md-12">
+			<h4>Favorite Food:</h4>
+			<select id="selectFavFood" ng-model="food" ng-options="food.name for food in foods" class="form-control" required>
+					<option class="favFoodDropdown" value="" selected disabled hidden>Favorite Food</option>
+			</select>
+		</div>
 		
 		<div class="col-md-12">
-			<input id="animalInfo" type="text" ng-model="animal.infoLink" class="form-control" placeholder="Information Link" required>
+			<h4>Additional Information: </h4>
+			<input id="animalInfo" type="text" ng-model="animal.infoLink" class="form-control" placeholder="Information URL" required>
 		</div>
-		</div>			
+	</div>			
 	<div class="modal-footer">
 		<button class="btn btn-primary" type="submit" ng-click="addAnimal('')" id="newAnimalSave">Save</button>
 		<button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>

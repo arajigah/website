@@ -11,9 +11,28 @@ body{
 	margin-top: 115px;
 	}
 
-modal-body{
-	height: auto;
+.modal-body.food {
+	height: 280px;
 }
+
+.modal-body.animal {
+	height: 350px;
+}
+
+.modal-body.enclosure{
+	height: 400px;
+}
+
+.condition{
+	margin-bottom: 20px;
+}
+
+.feedTime {
+	width: 18%;
+	margin-left: 40%;
+	text-align:center;
+}
+
 
 [views] {
 	font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
