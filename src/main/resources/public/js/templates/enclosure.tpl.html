@@ -12,12 +12,12 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="enclosure in enclosureList">
-				<td ng-bind="enclosure.name"></td>
-				<td ng-bind="enclosure.animal.name"></td>
-				<td ng-bind="enclosure.numOfAnimals"></td>
-				<td ng-bind="enclosure.feedTime"></td>
-				<td ng-bind="enclosure.condition.condition"></td>
+			<tr ng-repeat="enclosure in enclosureList" class="enclosureData" id="enclosure_{{$index}}">
+				<td>{{enclosure.name}}</td>
+				<td>{{enclosure.animal.name}}</td>
+				<td>{{enclosure.numOfAnimals}}</td>
+				<td>{{enclosure.feedTime}}</td>
+				<td>{{enclosure.condition.condition}}</td>
 				<td><button class="btn" type="submit" ng-click="editEnclosure(enclosure.id)" id="editEnclosure">Update</button></td>
 				<td><button class="btn" type="submit" ng-click="deleteEnclosure(enclosure.id)" id="removeEnclosure">Remove</button></td>
 			</tr>

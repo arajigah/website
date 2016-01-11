@@ -1,9 +1,15 @@
 package com.catalyst.zooKeepr.seleniumtest;
 
+import static org.junit.Assert.assertEquals;
+
+import java.util.Collection;
+
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -20,28 +26,27 @@ private WebDriver driver;
 	}
 	
 	@Test
-	public void testAddNewEnclosure() {
-		driver.findElement(By.id("food")).click();
-		
-		new WebDriverWait(driver, 400).until(ExpectedConditions.presenceOfElementLocated(By.id("newFoodButton"))).click();
-		new WebDriverWait(driver, 400).until(ExpectedConditions.presenceOfElementLocated(By.id("foodName")));
-			driver.findElement(By.id("foodName")).sendKeys("Salmon");
-			driver.findElement(By.xpath("//*[@id='selectFoodCategory']")).click();
-			new WebDriverWait(driver, 400).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='selectFoodCategory']/option[5]"))).click();
-				driver.findElement(By.xpath("//*[@id='vendorName']")).sendKeys("Sally's Salmon Deliveries");
-				driver.findElement(By.id("newFoodSave")).click();
-		
-		new WebDriverWait(driver, 400).until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[2]/ui-view/div/table/tbody/tr")));
+	public void testAddNewAnimal() {		
 			driver.findElement(By.id("animal")).click();
 		new WebDriverWait(driver, 400).until(ExpectedConditions.presenceOfElementLocated(By.id("newAnimalButton")));
 			driver.findElement(By.id("newAnimalButton")).click();
 			new WebDriverWait(driver, 400).until(ExpectedConditions.presenceOfElementLocated(By.id("animalName")));
-				driver.findElement(By.id("animalName")).sendKeys("Grizzly Bear");
-				driver.findElement(By.id("sciName")).sendKeys("Ursus arctos");
+				driver.findElement(By.id("animalName")).sendKeys("Polar Bear");
+				driver.findElement(By.id("sciName")).sendKeys("Ursus maritimus");
 				driver.findElement(By.xpath("//*[@id='selectFavFood']")).click();
-				driver.findElement(By.xpath("//*[@id='selectFavFood']/option[2]")).click();
-				driver.findElement(By.id("animalInfo")).sendKeys("https://en.wikipedia.org/wiki/Grizzly_bear");
+				driver.findElement(By.xpath("//*[@id='selectFavFood']/option[3]")).click();
+				driver.findElement(By.id("animalInfo")).sendKeys("https://en.wikipedia.org/wiki/Polar_bear");
 				driver.findElement(By.id("newAnimalSave")).click();
+				
+				Collection<WebElement> animalData = driver.findElements(By.className("animalData"));
+				new WebDriverWait(driver, 400).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='animal_" + (animalData.size()) + "']/td[1]")));
+				String animalName = driver.findElement(By.xpath("//*[@id='animal_" + (animalData.size()) + "']/td[1]")).getText();
+				assertEquals("POLAR BEAR", animalName);
 
+	}
+	
+	@After
+	public void closeDriver(){
+		driver.close();
 	}
 }
