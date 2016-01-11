@@ -38,7 +38,8 @@ body{
 	font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     text-transform:uppercase;
     font-weight:400;
-    text-align:center;    
+    text-align:center;
+    color: white;   
 }
 
 .table-responsive{
@@ -54,6 +55,15 @@ body{
 .btn {
 	border-radius:0;
 	box-shadow: 0px 0px 10px #888888;
+	color: black;
+}
+
+td>a{
+	color: #fed136;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: rgba(255, 126, 0, .80);
 }
 
 .navbar-default{
